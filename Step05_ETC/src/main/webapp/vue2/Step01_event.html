@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/vue2/Step01_event.html</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>이벤트 처리</h1>
+		<div id="app">
+			<!-- 
+				v-on:이벤트명 = "methods object 에 잇는 함수명"
+			 -->
+			<button v-on:click="clicked">눌러보셈</button>
+			<button v-on:click="sing">노래하기</button>
+			<p>{{msg}}</p>
+		</div>
+	</div>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				msg:""
+			},
+			methods:{
+				clicked:function(){
+					//여기는 함수 내부!
+					this.msg = "버튼을 눌렀네요!";
+				},
+				sing(){
+					this.msg= "노래해요!";
+				} 
+			}
+		});
+	</script>
+</body>
+</html>

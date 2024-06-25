@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/test/search")
+@WebServlet("/test/search/keyword")
 public class SendSurvlet3 extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest spam, HttpServletResponse resp) throws ServletException, IOException {

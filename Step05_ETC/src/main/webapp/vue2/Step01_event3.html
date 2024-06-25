@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/vue2/Step01_event3.html</title>
+<style>
+	.box{
+		width: 500px;
+		height: 500px;
+		border: 1px solid red;
+	}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div class="container" id="app">
+		<h1>마우스 이벤트 처리</h1>
+		<!-- 
+			v-on; 을 줄여서 @ 로 쓸수 있다.
+			따라서 이벤트를 처리하는 형식은 @이벤트명 이 된다.
+		 -->
+		<div class="box" @mousemove="onMousemove">
+			x: <strong>{{x}}</strong>
+			<br>
+			y: <strong>{{y}}</strong>
+		</div>		
+	</div>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				x:0,
+				y:0
+			},
+			methods:{
+				onMousemove(e){
+					console.log(e);
+					//마우스의 x, y 좌표가 출력되도록 이부분을 coding 해 보세요.
+					this.x = e.offsetX;
+					this.y = e.offsetY;
+				}
+			}
+		});
+	</script>
+</body>
+</html>
